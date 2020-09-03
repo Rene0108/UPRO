@@ -1,0 +1,20 @@
+/* Load three different integers from the keyboard (no need to control
+   are the numbers entered correctly) and print the highest loaded value on the screen. */
+
+using namespace std;
+
+int main(int argc,char** argv)
+{
+   int x, y, z, highest;
+   printf ("Enter 3 numbers > ");
+   scanf ("%d %d %d", &x, &y, &z);
+   highest=x;
+   if ( y > highest ) {
+   	   highest=y;
+   }
+   if ( z > highest ) {
+   	   highest=z;
+   }
+   printf ("The highest loaded number is %d.", highest);
+   return 0;
+}
