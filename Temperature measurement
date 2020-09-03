@@ -1,0 +1,31 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+/* load a real number T representing the measured body temperature.
+   Depending on the loaded value, print one of the warnings on the screen:
+       - "The temperature is normal. (by T<37.0)
+       - "The temperature is slightly raised." (by 37.0<=T<38.0)
+       - "The temperature is significantly increased." (by 38.0<=T<39.0)
+       - "The temperature is dangerously high." (other cases)             */
+
+using namespace std;
+
+int main(int argc,char** argv)
+{
+   float T;
+   printf("Load your temperature: ");
+   scanf("%f", &T);
+   
+   if(T < 37.0) {
+   	   printf ("The temperature is normal.");
+   } else if(T >= 37.0 && T<38.0) {
+   	   printf("The temperature is slightly raised.");
+   } else if(T >= 38.0 && T < 39.0) {
+   	   printf ("The temperature is significantly increased.");
+   } else if(T >= 39.0) {
+   	   printf ("The temperature is dangerously high.");
+   }
+   
+   return 0;
+}
