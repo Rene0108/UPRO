@@ -14,9 +14,9 @@ int main(int argc,char** argv)
     printf ("Load integer: ");
     scanf ("%d", &x);
     result=x;
-    if (x<0) {
-    	x=x*(-1);
+    if (result<0) {
+    	result=result*(-1);
 	}
-	printf ("Loaded number is %d and its absolute value is %d.", result, x);
+	printf ("Loaded number is %d and its absolute value is %d.", x, result);
     return 0;
 }
