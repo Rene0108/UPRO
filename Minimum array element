@@ -1,0 +1,36 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+#define SIZE 10
+
+/* Load field size n (no need to check for correctness) and load n
+   members of an integer field. Print position (index) and value the
+   smallest member of the field. If more than one field member has the same smallest
+   value, print the position of the first member with the lowest value. */
+
+using namespace std;
+
+int main(int argc,char** argv) {
+   int n, min;
+   printf("Load array size: ");
+   scanf("%d", &n);
+   
+   int array[n];
+   printf("Load %d elements of array: ", n);
+   scanf("%d ", &array[0]);
+   
+   min = array[0];
+   for(int i = 1; i < n-1; i++) {
+        scanf("%d ", &array[i]);
+        if(array[i] < min) {
+        	 min = array[i];
+		}
+   }
+   
+   for(int i = 0; i < n; i++) {
+        if(array[i] == min)  printf("The position of the minimum number is %d.", i);
+   }
+   
+   return 0;
+}
