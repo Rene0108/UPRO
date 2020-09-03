@@ -1,0 +1,31 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+#define SIZE 10
+
+/* Load 10 integers from the keyboard, print their arithmetic
+   mean and numbers that are greater than the arithmetic mean. */
+
+using namespace std;
+
+int main(int argc,char** argv) {
+   int x[SIZE], sum=0;
+   float mean;
+   
+   for (int i = 0; i < SIZE; i++) {
+        printf("Upisite broj: ");
+        scanf("%d", &x[i]);
+        sum = sum + x[i];
+   }
+   
+   mean = sum / SIZE;
+   printf("Arithmetic mean is %f.\nNumbers greater than the arithmetic mean are ", mean);
+   
+   for(int i = 0; i < SIZE; i++) {
+        if (x[i] > mean) printf("%d ", x[i]);
+   } 
+   
+   printf(".");
+   return 0;
+}
