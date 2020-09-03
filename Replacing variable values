@@ -1,0 +1,23 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+/* Initialize integer variables a and b to the values 14 and -9.
+The program should print their values, replace the values in
+variables and reprint the values of the variables on the screen. */
+
+using namespace std;
+
+int main(int argc,char** argv)
+{
+    int a=14, b=-9, help;
+    printf ("Value of a is %d and value of b is %d.\n", a, b);
+    
+    //replacing the values
+    help=a;
+    a=b;
+    b=help;
+    
+	printf ("Now replaced value of a is %d and replaced value od b is %d.", a, b);
+    return 0;
+}
