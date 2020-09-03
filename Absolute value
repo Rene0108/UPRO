@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+/* load an integer from the keyboard, then calculate the absolute value
+of the loaded number, then print the loaded value and its value on the screen
+absolute value */
+
+using namespace std;
+
+int main(int argc,char** argv)
+{
+    int x, y;
+    printf ("Load integer: ");
+    scanf ("%d", &x);
+    y=x;
+    if (x<0) {
+    	x=x*(-1);
+	}
+	printf ("Loaded number is %d and its absolute value is %d.", y, x);
+    return 0;
+}
