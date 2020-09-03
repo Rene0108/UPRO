@@ -1,0 +1,45 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+/* Load values for the number of rows mr (must not exceed 10) and the number
+   columns mc (should not exceed 20). Repeat loading the number of rows and 
+   repeat loading the number of columns until they are correct.
+   Load the values of the members of the two-dimensional integer field from mr
+   rows and ms columns.
+   In each row of the field find the largest member and print its position and
+   its value.                                                                   */
+
+using namespace std;
+
+int main (int argc,char** argv) {
+   int mr, mc;
+   
+   printf ("Load number of rows then number of columns: ");
+   scanf ("%d %d", &mr, &mc);
+   while (mr <= 0 || mc <= 0) {
+   	    printf ("Incorrect numbers loaded. Try to load correct numbers again: ");
+        scanf ("%d %d", &mr, &mc);
+   }
+   
+   int array[mr][mc], maximums[mr], i, j;
+   
+   printf ("Now load values of the array: ");
+   for (i = 0; i < mr; i = i + 1) {
+   	    for (j = 0; j < mc; j = j + 1) {
+   	    	  scanf ("%d", &array[i][j]);
+		    }
+   }
+   
+   for (i = 0; i < mr; i = i + 1) {
+   	    maximums[i] = array[i][0];
+   	    for (j = 0; j < mc; j++) {
+            if (array[i][j] > maximums[i]) {
+            	  maximums[i] = array[i][j];
+			      }
+		    }
+	      printf ("The largest number of %d.row is %d.\n", i+1, maximums[i]);
+   }
+   
+   return 0;
+}
