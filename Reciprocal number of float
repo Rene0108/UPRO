@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+/* Load a float variable x from the keyboard. If it is reciprocal
+value for x defined, print the value of the variable x and
+its reciprocal value. */
+
+using namespace std;
+
+int main(int argc,char** argv)
+{
+   float x;
+   printf ("Load real number: ");
+   scanf ("%f", &x);
+   if (x==0) {
+   	printf ("Loaded number is %f but that number doesn't have reciprocal value.", x);
+   } else {
+   	printf ("Loaded number is %f and its reciprocal value is %f.", x, 1/x);
+   }
+   return 0;
+}
