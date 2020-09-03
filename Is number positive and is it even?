@@ -1,0 +1,24 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+/* Print the message "Enter an integer>" on the screen. Load an integer from the 
+   keyboard and print depending on the value loaded  one, both or none of the following messages:
+      - "The number is positive."
+      - "The number is even."         */
+
+using namespace std;
+
+int main(int argc,char** argv)
+{
+   int x;
+   printf ("Enter an integer>");
+   scanf ("%d", &x);
+   if (x>0) {
+   	   printf ("The number is positive.\n");
+   }
+   if (x%2==0) {
+   	   printf ("The number is even.");
+   }
+   return 0;
+}
