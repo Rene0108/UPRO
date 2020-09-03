@@ -10,13 +10,13 @@ using namespace std;
 
 int main(int argc,char** argv)
 {
-    int x, y;
+    int x, result;
     printf ("Load integer: ");
     scanf ("%d", &x);
-    y=x;
+    result=x;
     if (x<0) {
     	x=x*(-1);
 	}
-	printf ("Loaded number is %d and its absolute value is %d.", y, x);
+	printf ("Loaded number is %d and its absolute value is %d.", result, x);
     return 0;
 }
