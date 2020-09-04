@@ -1,0 +1,73 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+#define LABS 8
+
+
+/* From the keyboard load an integer 'n' representing the number of students on
+   subject 'Introduction to Programming'. 
+   Load identification number (int) for each student, number of points on the midterm exam (float), 
+   number of points on final exam (float) and the number of points for each of the eight laboratory exercises (float). 
+   Calculate the sum of points on all knowledge tests for each student (total number of points).
+   Sort students by total number of points, in order of higher towards the smaller ones. 
+   The order of students who are equal to each other by the number of points does not matter.
+   Print the sorted data in the form of a table.                                   */
+
+
+using namespace std;
+
+int main (int argc,char** argv) {
+   
+   // loading numbe of students
+   int n, i, j;
+   printf ("Load number of students on subject 'Introduction to programming' : ");
+   scanf ("%d", &n);
+   
+   // structure description
+   struct student_s {
+   	    int id;
+   	    float mid_e;
+   	    float fin_e;
+   	    float lab_ex[LABS];
+   	    float sum;
+   };
+   
+   // definition of variables
+   struct student_s student[n], help;
+   
+   // loading 'n' students and calculating sum of points
+   for (i = 0; i < n; i++) {
+   	    printf ("Load id, points on midterm exam and points on final exam of %d.student: ", i+1);
+   	    scanf ("%d %f %f", &student[i].id, &student[i].mid_e, &student[i].fin_e);
+   	    student[i].sum = student[i].mid_e + student[i].fin_e;
+   	    printf ("Now load number of points for each of %d laboratory exercises: ", LABS);
+   	    for (j = 0; j < LABS; j++) {
+   	    	    scanf ("%f", &student[i].lab_ex[j]);
+   	    	    student[i].sum = student[i].sum + student[i].lab_ex[j];
+		   }
+		printf ("%d.student sum of points = %f\n", i+1, student[i].sum );
+   }
+   
+   // sorting students by total number of points
+   for (i = 0; i < n; i++) {
+   	    for (j = i; j < n; j++) {
+   	    	    if (student[j].sum > student[i].sum) {
+   	    	    	    help = student[i];
+   	    	    	    student[i] = student[j];
+   	    	    	    student[j] = help;
+				   }
+		   }
+   }
+   
+   // printing results in form of table
+   printf ("\n\n\nRang list:\n    |   id   | midterm exam | final exam | laboratory exercises | TOTAL SUM OF POINTS\n");
+                     printf ("____|________|______________|____________|______________________|______________________\n");
+   for (i = 0; i < n; i++) {
+   	    printf (" %d. |   %d  |    %6.4f   |   %6.4f  |       %6.4f        |        %6.4f       \n", 
+		         i + 1, student[i].id, student[i].mid_e, student[i].fin_e, student[i].sum - student[i].mid_e - student[i].fin_e, student[i].sum);
+   	    
+   } 
+
+   return 0;
+}
