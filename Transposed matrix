@@ -1,0 +1,55 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+
+/* Load the order of the square matrix 'n'. No need to check
+   correctness of input. Load the values of the square matrix 
+   'mat' of order 'n'. In the form of a table print loaded values.
+   Transpose the matrix by replacing the members within the matrix (without
+   defining a new matrix and without using auxiliary fields).
+   Print the new contents of the matrix in the form of a table.             */
+
+
+using namespace std;
+
+int main (int argc,char** argv) {
+   
+   int n, i, j;
+   printf ("Load the order of the square matrix: ");
+   scanf ("%d", &n);
+   int matrix[n][n], help;
+   
+   printf ("Load the values of the square matrix:\n");
+   for (i = 0; i < n; i++) {
+   	    for (j = 0; j < n; j++) {
+   	   	    scanf ("%d", &matrix[i][j]);
+	    }
+   }
+   
+   printf ("Loaded matrix:\n");
+   for (i = 0; i < n; i++) {
+   	    for (j = 0; j < n; j++) {
+   	   	    printf ("%d ", matrix[i][j]);
+	    }
+	    printf ("\n");
+   }
+   
+   for (i = 0; i < n - 1; i++) {
+   	    for (j = i + 1; j < n; j++) {
+   	   	    help = matrix[i][j];
+   	   	    matrix[i][j] = matrix[j][i];
+   	   	    matrix[j][i] = help;
+	    }
+   }
+   
+   printf ("Transposed matrix is:\n");
+   for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+   }
+
+   return 0;
+}
