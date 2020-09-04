@@ -1,0 +1,42 @@
+#include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+#define ORDER 8
+
+/* Load values (float type) of square matrix of order 8.
+   Print the smallest value on the main diagonal and the smallest
+   value on the side diagonal.                                    */
+
+using namespace std;
+
+int main (int argc,char** argv) {
+   
+   float matrix[ORDER][ORDER];
+   
+   int i, j;
+   
+   printf ("Load values of the square matrix:\n");
+   for (i = 0; i < ORDER; i = i + 1) {
+   	    for (j = 0; j < ORDER; j = j + 1) {
+   	    	scanf ("%f", &matrix[i][j]);
+		}
+   }
+   
+   float min_main = matrix[0][0], min_side = matrix[ORDER-1][ORDER-1];
+   
+   for (i = 0; i < ORDER; i = i + 1) {
+   	    for (j = 0; j < ORDER; j++) {
+            if (i == j) {
+            	if (matrix[i][j] < min_main)   min_main = matrix[i][j];
+			}
+			if (i + j == ORDER - 1) {
+				if (matrix[i][j] < min_side)   min_side = matrix[i][j];
+			}
+		}
+   }
+   
+   printf ("The smallest number on the main diagonal is %f and the smallest number of side diagonal is %f.", min_main, min_side);
+   
+   return 0;
+}
